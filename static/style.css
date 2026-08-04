@@ -1,0 +1,395 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+
+    margin: 0;
+
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transition: 0.8s;
+
+    background: linear-gradient(
+            to bottom,
+            #1e293b,
+            #334155
+    );
+
+}
+
+
+.container {
+
+    width: 380px;
+
+    max-width: 90%;
+
+}
+
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+.search-box input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+}
+
+
+.search-box button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #38bdf8;
+    color: white;
+    font-size: 16px;
+}
+
+
+.weather-card {
+
+    background: rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(10px);
+
+    color: white;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+}
+
+
+#cityName {
+    font-size: 30px;
+}
+
+#weatherIcon{
+    font-size:80px;
+    margin:15px 0;
+}
+
+.fa-sun{
+    color:#FFD54F;
+    text-shadow:0 0 25px #FFD54F;
+}
+
+.fa-moon{
+    color:#E5E7EB;
+    text-shadow:0 0 20px #ffffff;
+}
+
+
+#temperature {
+    font-size: 55px;
+    margin: 10px;
+}
+
+
+#description {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+
+.weather-card p {
+    font-size: 17px;
+}
+
+/* Sunny */
+
+.sunny {
+    background: linear-gradient(
+            to bottom,
+            #56ccf2,
+            #2f80ed
+    );
+}
+
+
+/* Night */
+
+.night {
+    background: linear-gradient(
+            to bottom,
+            #020617,
+            #1e293b
+    );
+}
+
+
+/* Rain */
+
+.rain {
+    background: linear-gradient(
+            to bottom,
+            #334155,
+            #64748b
+    );
+}
+
+
+/* Cloud */
+
+.cloud {
+    background: linear-gradient(
+            to bottom,
+            #94a3b8,
+            #475569
+    );
+}
+
+#weatherEffect {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+}
+
+.raindrop {
+
+    position: absolute;
+
+    width: 2px;
+
+    height: 20px;
+
+    background: white;
+
+    opacity: 0.5;
+
+    animation: rain 1s linear infinite;
+
+}
+
+
+@keyframes rain {
+
+    from {
+
+        transform: translateY(-20px);
+
+    }
+
+
+    to {
+
+        transform: translateY(100vh);
+
+    }
+
+}
+
+.star {
+
+    position: absolute;
+
+    width: 3px;
+
+    height: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    animation: twinkle 2s infinite;
+
+}
+
+
+@keyframes twinkle {
+
+    50% {
+
+        opacity: 0.2;
+
+    }
+
+}
+
+.sun {
+
+    position: absolute;
+
+    top: 50px;
+
+    right: 80px;
+
+    width: 120px;
+
+    height: 120px;
+
+    background: #fde047;
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 50px #fde047;
+
+}
+
+@media (max-width: 500px) {
+
+
+    .container {
+
+        width: 95%;
+
+    }
+
+
+    .search-box {
+
+        flex-direction: column;
+
+    }
+
+
+    .search-box input,
+    .search-box button {
+
+        width: 100%;
+
+    }
+
+
+    .weather-card {
+
+        padding: 20px;
+
+    }
+
+
+    #cityName {
+
+        font-size: 24px;
+
+    }
+
+
+    #temperature {
+
+        font-size: 45px;
+
+    }
+
+
+    .weather-card p {
+
+        font-size: 15px;
+
+    }
+
+
+}
+
+.search-box button:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+}
+
+.search-wrapper {
+
+    position: relative;
+
+    flex: 1;
+
+}
+
+
+.search-wrapper input {
+
+    width: 100%;
+
+}
+
+
+#suggestions {
+
+    position: absolute;
+
+    top: 50px;
+
+    left: 0;
+
+    width: 100%;
+
+    background: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    z-index: 20;
+
+}
+
+
+#suggestions div {
+
+    padding: 12px;
+
+    color: #333;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+}
+
+
+#suggestions div:hover {
+
+    background: #e2e8f0;
+
+}
+.developer{
+
+    margin-top:20px;
+
+    padding-top:15px;
+
+    border-top:1px solid rgba(255,255,255,0.2);
+
+    font-size:14px;
+
+    color:rgba(255,255,255,0.8);
+
+}
+
+.developer strong{
+
+    color:white;
+
+}

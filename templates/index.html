@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div id="weatherEffect"></div>
+<div class="container">
+
+    <div class="search-box">
+
+        <div class="search-wrapper">
+
+            <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Enter city..."
+            >
+
+            <div id="suggestions"></div>
+
+        </div>
+
+
+        <button id="searchBtn">
+            Search
+        </button>
+
+    </div>
+
+    <div class="weather-card" id="weatherCard">
+
+        <h2 id="cityName"></h2>
+
+        <div id="weatherIcon"></div>
+
+        <h1 id="temperature"></h1>
+
+        <p id="description"></p>
+
+        <p id="humidity"></p>
+
+        <p id="wind"></p>
+
+        <p id="pressure"></p>
+
+        <p id="feelsLike"></p>
+
+        <p id="tempMin"></p>
+
+        <p id="tempMax"></p>
+        <p id="sunrise"></p>
+
+        <p id="sunset"></p>
+        <div class="developer">
+            Created by <strong>Matin Alinaghian</strong>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
